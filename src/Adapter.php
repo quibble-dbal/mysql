@@ -37,6 +37,11 @@ class Adapter extends Dabble\Adapter
         return parent::value($value);
     }
 
+    public function now() : Dabble\Raw
+    {
+        return new Dabble\Raw('NOW()');
+    }
+
     public function interval($quantity, $amount) : Dabble\Raw
     {
         $what = null;

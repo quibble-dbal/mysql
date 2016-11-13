@@ -11,5 +11,10 @@
     ],
     "require": {
         "quibble/dabble": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Quibble\\Mysql\\": "./src"
+        }
     }
 }

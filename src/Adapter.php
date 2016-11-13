@@ -52,9 +52,9 @@ class Adapter extends Dabble\Adapter
         return sprintf("interval %d %s", $amount, $what);
     }
 
-    public function random()
+    public function random() : Dabble\Raw
     {
-        return 'RAND()';
+        return new Dabble\Raw('RAND()');
     }
 }
 

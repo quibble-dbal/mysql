@@ -37,7 +37,7 @@ class Adapter extends Dabble\Adapter
         return parent::value($value);
     }
 
-    public function interval($quantity, $amount)
+    public function interval($quantity, $amount) : Dabble\Raw
     {
         $what = null;
         switch ($quantity) {
@@ -49,7 +49,7 @@ class Adapter extends Dabble\Adapter
             case self::MONTH: $what = 'month'; break;
             case self::YEAR: $what = 'year'; break;
         }
-        return sprintf("interval %d %s", $amount, $what);
+        return new Dabble\Raw(sprintf("interval %d %s", $amount, $what));
     }
 
     public function random() : Dabble\Raw

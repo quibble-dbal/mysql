@@ -21,29 +21,29 @@ class Adapter extends Dabble\Adapter
     }
 
     /**
-     * @return Quibble\Dabble\Raw
+     * @return string
      */
-    public function now() : Dabble\Raw
+    public function now() : string
     {
-        return new Dabble\Raw('NOW()');
+        return 'NOW()';
     }
 
     /**
      * @param string $unit
      * @param int $amount
-     * @return Quibble\Dabble\Raw
+     * @return string
      */
-    public function interval(string $unit, int $amount) : Dabble\Raw
+    public function interval(string $unit, int $amount) : string
     {
-        return new Dabble\Raw(sprintf("interval %d %s", $amount, $unit));
+        return sprintf("interval %d %s", $amount, $unit);
     }
 
     /**
-     * @return Quibble\Dabble\Raw
+     * @return string
      */
-    public function random() : Dabble\Raw
+    public function random() : string
     {
-        return new Dabble\Raw('RAND()');
+        return 'RAND()';
     }
 }
 
